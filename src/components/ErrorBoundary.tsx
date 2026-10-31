@@ -1,0 +1,2 @@
+import React from 'react'
+export class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { error: boolean }> { state = { error: false }; static getDerivedStateFromError() { return { error: true } }; render() { if (this.state.error) return <div className="grid min-h-[50vh] place-items-center text-center"><div><h1 className="text-2xl font-bold">Something went wrong</h1><p className="mt-2 text-slate-500">Please refresh and try again.</p></div></div>; return this.props.children } }
