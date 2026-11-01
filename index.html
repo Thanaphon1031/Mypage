@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanaphon Kam-or | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#818cf8',
+                            DEFAULT: '#6366f1',
+                            dark: '#4f46e5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+        
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-brand-DEFAULT selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-slate-800/50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-white hover:text-brand-light transition-colors">
+                TK<span class="text-brand-DEFAULT">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="text-slate-300 hover:text-white transition-colors">Skills</a>
+                <a href="#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-slate-300 hover:text-white focus:outline-none" id="mobile-menu-btn">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden bg-slate-900 border-b border-slate-800" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col gap-4 text-center">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors mobile-link">About</a>
+                <a href="#skills" class="text-slate-300 hover:text-white transition-colors mobile-link">Skills</a>
+                <a href="#contact" class="text-slate-300 hover:text-white transition-colors mobile-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Decorative blur element -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-DEFAULT/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700/50 text-sm text-slate-300 mb-8 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Available for new opportunities
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
+                Hi, I'm <br class="md:hidden" />
+                <span class="gradient-text">Thanaphon Kam-or</span>
+            </h1>
+            
+            <p class="mt-4 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                A tech enthusiast passionate about Cloud Computing, Artificial Intelligence, and crafting modern digital experiences. 
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="px-8 py-3.5 rounded-full bg-brand-DEFAULT hover:bg-brand-dark text-white font-medium transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] flex items-center gap-2">
+                    Let's Connect <i class="ph ph-arrow-right"></i>
+                </a>
+                <a href="#about" class="px-8 py-3.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-medium border border-slate-700 transition-all flex items-center gap-2">
+                    Discover More <i class="ph ph-caret-down"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/50 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Image / Visual -->
+                <div class="w-full lg:w-5/12 relative group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-DEFAULT to-purple-500 rounded-3xl transform rotate-3 scale-105 opacity-20 group-hover:rotate-6 group-hover:scale-110 transition-transform duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" alt="Workspace" class="relative rounded-3xl shadow-2xl object-cover aspect-square w-full border border-slate-800 grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" />
+                </div>
+                
+                <!-- Content -->
+                <div class="w-full lg:w-7/12">
+                    <h2 class="text-sm font-bold tracking-widest text-brand-light uppercase mb-2">About Me</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Bridging the gap between code and infrastructure.</h3>
+                    
+                    <div class="space-y-4 text-slate-300 leading-relaxed text-lg">
+                        <p>
+                            I am currently a student at <strong class="text-white">Mahasarakham University</strong>, where I'm honing my skills in computer science and technology. My academic journey has fueled a deep curiosity for how systems scale and operate in the modern web.
+                        </p>
+                        <p>
+                            My primary areas of interest revolve around <strong class="text-brand-light">Cloud Computing</strong> and <strong class="text-brand-light">Artificial Intelligence</strong>. I enjoy exploring cloud architectures, deploying applications, and experimenting with the latest AI tools to solve real-world problems.
+                        </p>
+                        <p>
+                            When I step away from the keyboard, I'm an avid gamer. Gaming not only serves as my creative outlet but also inspires my approach to problem-solving and user experience design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-brand-light uppercase mb-2">Technical Arsenal</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">Skills & Technologies</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Frontend Card -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
+                        <i class="ph ph-code text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Web Development</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> HTML5 & CSS3</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Modern JavaScript</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Tailwind CSS</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Responsive Design</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud Card -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-400 mb-6">
+                        <i class="ph ph-cloud-arrow-up text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Cloud Computing</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Cloud Infrastructure</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Deployment pipelines</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Virtualization</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Web Hosting (GitHub Pages)</li>
+                    </ul>
+                </div>
+
+                <!-- AI & Other Card -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
+                        <i class="ph ph-brain text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">AI & Tools</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> AI Tools & Prompting</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Git & Version Control</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Python Basics</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-DEFAULT"></i> Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's work together</h2>
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+                Whether you have a question, a project idea, or just want to chat about cloud tech or the latest games, my inbox is always open.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Replace placeholders with actual links when deploying -->
+                <a href="mailto:hello@example.com" class="glass-panel px-6 py-4 rounded-xl flex items-center gap-3 text-white hover:bg-slate-800 transition-colors group">
+                    <i class="ph ph-envelope-simple text-2xl text-brand-light group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">Email Me</span>
+                </a>
+                
+                <a href="https://github.com" target="_blank" class="glass-panel px-6 py-4 rounded-xl flex items-center gap-3 text-white hover:bg-slate-800 transition-colors group">
+                    <i class="ph ph-github-logo text-2xl text-slate-300 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">GitHub</span>
+                </a>
+                
+                <a href="https://linkedin.com" target="_blank" class="glass-panel px-6 py-4 rounded-xl flex items-center gap-3 text-white hover:bg-slate-800 transition-colors group">
+                    <i class="ph ph-linkedin-logo text-2xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">
+                &copy; <span id="year"></span> Thanaphon Kam-or. All rights reserved.
+            </p>
+            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                Built with <i class="ph-fill ph-heart text-red-500"></i> using HTML & Tailwind CSS
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add glassmorphism to navbar on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(30, 41, 59, 0.7)';
+            }
+        });
+    </script>
+</body>
+</html>
